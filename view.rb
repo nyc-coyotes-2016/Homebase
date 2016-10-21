@@ -22,29 +22,30 @@ module View
     end
   end
 
-  def self.stop_loop
-    begin
-      while stop = STDIN.read_nonblock(100)
-        return true if stop
-      end
-      rescue IO::WaitReadable, IO::EAGAINWaitReadable
-        abort
-      return false
-    end
-  end
+  # def self.stop_loop
+  #   begin
+  #     while stop = STDIN.read_nonblock(1)
+  #       return true if stop
+  #     end
+  #     # rescue IO::WaitReadable, IO::EAGAINWaitReadable
+  #     #   abort
+  #     return false
+  #   end
+  # end
 
   def self.party_time
     puts "\n\nPRESS ENTER FOR PARTY TIME!"
     ARGV.clear
     STDIN.gets.chomp
-    loop do
+    # loop do
+    10.times do
       system "clear"
       puts Cat.cat_frame_1
       sleep(1)
       system "clear"
       puts Cat.cat_frame_2
       sleep(1)
-      break if stop_loop
+      # break if stop_loop
     end
   end
 

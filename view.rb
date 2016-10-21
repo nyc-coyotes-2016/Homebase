@@ -15,7 +15,7 @@ module View
   end
 
   def self.display_homebases(homebase_list)
-    puts "HERE ARE THE HOMEBASES IN YOUR BOROUGH:"
+    puts "\nHERE ARE THE HOMEBASES NEAR YOU:"
     homebase_list.homebases.each_with_index do |homebase, i|
       puts "Number #{i+1}"
       puts homebase
